@@ -44,13 +44,14 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
           <Routes>
-            <Route exact path="/about" element={<About />} />
+            
+            <Route exact path="/about" element={<About mode={mode}/>} />
             <Route exact
-              path="/"
+              path="/home"
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter the text to analyze:"
+                  heading="Word Counter|Character Counter"
                   mode={mode}
                 />
               }
@@ -58,6 +59,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+      
     </>
   );
 }

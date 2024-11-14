@@ -26,7 +26,7 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link active" aria-current="page" to="/home">
                   Home
                 </Link>
               </li>
@@ -58,7 +58,7 @@ export default function Navbar(props) {
             onClick={props.toogleMode}
           />
           <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-            Enable DarkMode
+            {props.mode=='light'?'Enable Dark Mode':'Enable Light Mode'}
           </label>
         </div>
       </nav>
@@ -68,7 +68,7 @@ export default function Navbar(props) {
 
 Navbar.propTypes = {
   title: PropTypes.string.isRequired,
-  aboutText: PropTypes.string,
+  aboutText: PropTypes.string.isRequired,
 };
 
 Navbar.defaultProps = { title: "SetYourTitle", aboutText: "SetAboutPage" };
